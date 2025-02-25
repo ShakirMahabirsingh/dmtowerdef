@@ -13,7 +13,8 @@ public partial class mainscene : Node
         
         countdowntimer.Start();
         countdowntimer.Timeout += OnTimerTimeout;
-        
+        Engine.TimeScale = 0.5;
+
     }
 
     public override void _Process(double delta) //Updates every frame
