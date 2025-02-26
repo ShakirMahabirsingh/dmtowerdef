@@ -4,7 +4,9 @@ using System;
 //Avg Player, loses AS moderately 
 public partial class player2 : CharacterBody2D
 {
-	public double attentionSpan = 100;
+
+	[Export]
+	public double attentionSpan = 1000;
 	public double aSburnSpeed = 10.0;
 	
 	public override void _Process(double delta)
@@ -33,9 +35,11 @@ public partial class player2 : CharacterBody2D
 		{
 			player2_animatedsprite.Play("player2_bored");
 		}
-		if (attentionSpan == 0)
+		if (attentionSpan < 0)
 		{
 			player2_animatedsprite.QueueFree();
+			GetTree().ChangeSceneToFile("res://Scenes/session_over_screen.tscn");
+			Engine.TimeScale = 0.1;
 			QueueFree();
 		}
 	}

@@ -1,9 +1,11 @@
 using Godot;
 using System;
 
+
 //Avg Player, doesn't lose AS very fast
 public partial class player1 : CharacterBody2D
 {
+	[Export]
 	public double attentionSpan = 100;
 	public double aSburnSpeed = 5.0;
 	
@@ -33,9 +35,11 @@ public partial class player1 : CharacterBody2D
 		{
 			player1_animatedsprite.Play("player1_bored");
 		}
-		if (attentionSpan == 0)
+		if (attentionSpan < 0)
 		{
 			player1_animatedsprite.QueueFree();
+		 	Engine.TimeScale = 0.1;
+			GetTree().ChangeSceneToFile("res://Scenes/session_over_screen.tscn");
 			QueueFree();
 		}
 	}
