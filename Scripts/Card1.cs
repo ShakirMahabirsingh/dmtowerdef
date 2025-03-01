@@ -13,8 +13,13 @@ public partial class Card1 : Node2D
 
 	private void CardSelected()
 	{
-		GD.Print("click!");
-		// var player1bump = GetNode<player1>("player1");	
-	 	// player1bump.attentionSpan += 100;
+		GD.Print("A dragon swoops down upon your party, poised and ready to attack. Get ready for battle!");
+		var player1bump = GetNode<player1>("../../player1");
+
+		if (player1bump.attentionSpan != 100)
+		{
+			player1bump.attentionSpan += (100-player1bump.attentionSpan);
+		}
+		else GD.Print("Player 1 is Max AS!!!"); //rarely show, AS always decreasing
 	}
 }

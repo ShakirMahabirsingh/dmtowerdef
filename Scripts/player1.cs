@@ -5,7 +5,7 @@ using System;
 //Avg Player, doesn't lose AS very fast
 public partial class player1 : CharacterBody2D
 {
-	[Export]
+	[Export] 
 	public double attentionSpan = 100;
 	public double aSburnSpeed = 5.0;
 	
