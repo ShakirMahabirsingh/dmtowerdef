@@ -6,7 +6,7 @@ public partial class player2 : CharacterBody2D
 {
 
 	[Export]
-	public double attentionSpan = 1000;
+	public double attentionSpan = 100;
 	public double aSburnSpeed = 10.0;
 	
 	public override void _Process(double delta)
