@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Card1 : Node2D
 {
@@ -13,7 +14,8 @@ public partial class Card1 : Node2D
 
 	private void CardSelected()
 	{
-		GD.Print("A dragon swoops down upon your party, poised and ready to attack. Get ready for battle!");
+		
+		GD.Print(""+ CardInventory.Instance.CardDict);
 		var player1bump = GetNode<player1>("../../player1");
 
 		if (player1bump.attentionSpan != 100)
