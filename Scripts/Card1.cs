@@ -15,7 +15,7 @@ public partial class Card1 : Node2D
 	private void CardSelected()
 	{
 		
-		GD.Print(""+ CardInventory.Instance.CardDict);
+		GD.Print(CardInventory.Instance.CardDictionary[GD.RandRange(0, 5)]);
 		var player1bump = GetNode<player1>("../../player1");
 
 		if (player1bump.attentionSpan != 100)
